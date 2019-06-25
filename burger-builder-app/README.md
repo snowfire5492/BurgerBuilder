@@ -1,17 +1,4 @@
-#Burger Builder App as a Test Project in React 
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Burger Builder App as a Test Project in React 
 
 
 
