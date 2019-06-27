@@ -1,6 +1,6 @@
 .BuildControl {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     margin: 5px 0;
 }
@@ -46,7 +46,7 @@
 }
 
 .BuildControl .Less:hover, .BuildControl .Less:active {
-    background-color: #daa972;
+    background-color: #cc8b40;
     color: white;
 }
 
