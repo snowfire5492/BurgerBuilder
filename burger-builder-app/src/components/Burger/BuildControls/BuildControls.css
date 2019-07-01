@@ -8,6 +8,11 @@
     margin: auto;
     padding: 10px 0;
 }
+.Price {
+    align-items: center;
+    margin-left: 575px;
+    
+}
 
 .OrderButton {
     background-color: #DAD735;
