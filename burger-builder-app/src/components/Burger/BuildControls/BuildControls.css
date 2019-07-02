@@ -2,6 +2,7 @@
     width: 100%;
     background-color: #cf8f2e;
     display: flex;
+    justify-content: space-between;
     flex-flow: column;
     align-content: center;
     box-shadow: 0 2px 1px #ccc;
@@ -10,7 +11,9 @@
 }
 .Price {
     align-items: center;
-    margin-left: 575px;
+    display: flex;
+    justify-content: center;
+    
     
 }
 
