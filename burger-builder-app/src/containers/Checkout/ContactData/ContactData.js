@@ -8,6 +8,7 @@ class ContactData extends Component {
     state = {
         name: '', 
         email: '',
+        price: '',
         address: {
             street: '',
             zipcode: '',
@@ -20,6 +21,7 @@ class ContactData extends Component {
         event.preventDefault();
         //console.log(this.props.ingredients);
         this.setState( {loading: true} );
+        console.log(this.props.price);
         const order = {
             ingredients: this.props.ingredients,
             price: this.props.price, 
