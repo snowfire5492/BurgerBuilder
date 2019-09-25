@@ -30,7 +30,7 @@ class ContactData extends Component {
                     zipcode: '41351',
                     country: 'USA'
                 }, 
-                email: 'test@test.com'
+                email: 'test@test.com',
             },
             deliveryMethod: 'overnight'
         }
