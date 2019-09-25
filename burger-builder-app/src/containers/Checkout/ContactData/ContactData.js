@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from '../../../components/UI/Button/Button';
 import classes from './ContactData.css';
+import Spinner from '../../../components/UI/Spinner/Spinner';
 import axios from '../../../axios-orders';
 
 class ContactData extends Component {
@@ -47,20 +48,29 @@ class ContactData extends Component {
     
     
     render (){
+
+        let form = (
+            <form>
+                <input className={classes.Input} type="text"
+                    name="name" placeholder="name" />
+                <input className={classes.Input} type="email"
+                    name="email" placeholder="email" />
+                <input className={classes.Input} type="text"
+                    name="street" placeholder="street" />
+                <input className={classes.Input} type="text"
+                    name="zipcode" placeholder="zipcode" />
+                <Button btnType="Success" clicked={this.orderHandler}>ORDER</Button>
+            </form>
+        )
+
+        if(this.state.loading) {
+            form = <Spinner />; 
+        }
+
         return (
             <div className={classes.ContactData} >
                 <h4>Enter Contact Data</h4>
-                <form>
-                    <input className={classes.Input} type="text"
-                        name="name" placeholder="name" />
-                    <input className={classes.Input} type="email"
-                        name="email" placeholder="email" />
-                    <input className={classes.Input} type="text"
-                        name="street" placeholder="street" />
-                    <input className={classes.Input} type="text"
-                        name="zipcode" placeholder="zipcode" />
-                    <Button btnType="Success" clicked={this.orderHandler}>ORDER</Button>
-                </form>
+                {form}
               </div>  
 
         )
