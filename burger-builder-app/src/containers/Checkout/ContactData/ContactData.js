@@ -91,6 +91,18 @@ class ContactData extends Component {
             });
 
     }
+
+    inputChangedHandler = (event, inputIdentifier) => {
+        const updatedOrderForm = {
+            ...this.state.orderForm // cloning orderForm
+        };
+        const updatedFormElement = {
+            ...updatedOrderForm[inputIdentifier] // deeply cloning element
+        };
+        updatedFormElement.value = event.target.value;  //appending new value to element
+        updatedOrderForm[inputIdentifier] = updatedFormElement; // adding element to orderform
+        this.setState({orderForm: updatedOrderForm});   // setting state
+    }
     
     
     render (){
@@ -108,7 +120,8 @@ class ContactData extends Component {
                     <Input key={formElement.id}
                     elementType={formElement.config.elementType} 
                     elementConfig={formElement.config.elementConfig}
-                    value={formElement.config.value} />
+                    value={formElement.config.value} 
+                    changed={(event) => this.inputChangedHandler(event, formElement.id)}/>
                 ))}
                 
                 <Button btnType="Success" 
