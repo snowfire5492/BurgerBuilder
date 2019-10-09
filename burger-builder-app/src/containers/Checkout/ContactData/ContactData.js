@@ -7,13 +7,56 @@ import Input from '../../../components/UI/Input/Input';
 
 class ContactData extends Component {
     state = {
-        name: '', 
-        email: '',
-        price: '',
-        address: {
-            street: '',
-            zipcode: '',
-            country: ''
+        orderForm: {
+            name: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Your Name'
+                },
+                value: ''
+            },
+            street: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Street'
+                },
+                value: ''
+            },
+            postal: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Postal'
+                },
+                value: ''
+            },
+            country: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Country'
+                },
+                value: ''
+            },
+            email: {
+                elementConfig: 'input',
+                elementConfig: {
+                    type: 'email',
+                    placeholder: 'Email'
+                },
+                value: ''
+            },
+            deliveryMethod: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [{value: 'fastest', displayValue: 'Fastest'},
+                              {value: 'cheapest', displayValue: 'Cheapest'}
+                    ]
+                },
+                value: ''
+            }
         },
         loading: false
     }
@@ -54,14 +97,7 @@ class ContactData extends Component {
 
         let form = (
             <form>
-                <Input inputtype="input" type="text" 
-                    name="name" placeholder="name"/>
-                <Input inputtype="input" type="email" 
-                    name="email" placeholder="email" />
-                <Input inputtype="input" type="text" 
-                    name="street" placeholder="street"  />
-                <Input inputtype="input" type="text" 
-                    name="postal" placeholder="postal"  />
+                <Input elementType='' elementType=''/>
                 <Button btnType="Success" 
                 clicked={this.orderHandler}>ORDER</Button>
             </form>
