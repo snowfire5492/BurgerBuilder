@@ -10,6 +10,11 @@
     margin-bottom: 8px;
 }
 
+.Invalid {
+    border: 1px solid red;
+    background-color: salmon;
+}
+
 .InputElement {
     outline: none;
     border: 1px solid #ccc;
@@ -25,3 +30,4 @@
     outline: none;
     background-color: #ccc;
 }
+
