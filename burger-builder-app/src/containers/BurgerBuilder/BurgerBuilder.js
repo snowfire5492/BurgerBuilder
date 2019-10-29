@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actionTypes from '../../store/actions';
 import Burger from '../../components/Burger/Burger';
 import Aux from '../../hoc/Auxiliary';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
@@ -196,4 +198,20 @@ class BurgerBuilder extends Component {
 
 }
 
-export default withErrorHandler(BurgerBuilder, axios);
+const mapStateToProps = (state) => {
+    return {
+        ings: state.ingredients
+    };
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onIngredientAdded: (ingName) => dispatch({type: actionTypes.ADD_INGREDIENT,
+                                                    ingredientName: ingName}),
+        onIngredientRemoved: (ingName) => dispatch({type: actionTypes.REMOVE_INGREDIENT,
+                                                    ingredientName: ingName})
+
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(BurgerBuilder, axios));
