@@ -1,3 +1,6 @@
 .Content {
     margin-top: 72px;
+    flex: 1 0 auto;
+    padding: var(--space) var(--space) 0;
+    height: 100%;
 }
