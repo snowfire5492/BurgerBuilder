@@ -64,7 +64,7 @@ class ContactData extends Component {
                 touched: false
             },
             email: {
-                elementConfig: 'input',
+                elementType: 'input',
                 elementConfig: {
                     type: 'email',
                     placeholder: 'Email'
@@ -98,8 +98,8 @@ class ContactData extends Component {
         event.preventDefault();
         //console.log(this.props.ingredients);
         this.setState( {loading: true} );
-        console.log(this.props.price);
-        const formData = {};
+        //console.log(this.props.price);
+        let formData = {};
         for (let formElementIdentifier in this.state.orderForm){
             formData[formElementIdentifier] = 
                 this.state.orderForm[formElementIdentifier].value;
@@ -153,7 +153,7 @@ class ContactData extends Component {
         console.log(updatedFormElement);
         updatedOrderForm[inputIdentifier] = updatedFormElement; // adding element to orderform
         
-        const formIsValid = true;
+        let formIsValid = true;
         for (let inputIdentifier in updatedOrderForm) {
             formIsValid = updatedOrderForm[inputIdentifier].valid 
                 && formIsValid;
@@ -199,7 +199,7 @@ class ContactData extends Component {
             <div className={classes.ContactData} >
                 <h4>Enter Contact Data</h4>
                 {form}
-              </div>  
+            </div>  
 
         )
     }
