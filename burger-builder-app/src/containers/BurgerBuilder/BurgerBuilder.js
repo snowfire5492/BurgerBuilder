@@ -18,9 +18,10 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount() {
-        
 
-        this.regInterceptor = axios.i
+        console.log(this.props);
+
+        this.props.onInitIngredients();
     }
 
     updatePurchaseState = (ingredients) => {
@@ -103,7 +104,7 @@ class BurgerBuilder extends Component {
         }
 
         let orderSummary = null;
-        let burger = this.state.error ? <p>Ingredients Cant Load</p> : <Spinner />;
+        let burger = this.props.error ? <p>Ingredients Cant Load</p> : <Spinner />;
         
         if(this.props.ings){ // non null value to be true
             burger = (
