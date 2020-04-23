@@ -7,3 +7,7 @@ export {
 export { 
     purchaseBurger 
 } from './order';
+
+export {
+    auth
+} from './auth';
