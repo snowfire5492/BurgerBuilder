@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Layout from './components/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
 import Checkout from './containers/Checkout/Checkout';
-import { Route } from 'react-router-dom';
+import { Route, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Orders from './components/Orders/Orders';
@@ -37,4 +37,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));
